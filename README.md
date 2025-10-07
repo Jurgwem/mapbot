@@ -1,5 +1,5 @@
 # mapbot
-wortspiel aus "Robot" und "Map", gleichzeitige Anspielung auf Mapbot :)
+Karten Software des BKHs.
 <br />
 <br />
-Karten Software des BKHs
+Wortspiel aus "Robot" und "Map", gleichzeitige Anspielung auf Mapbot.
