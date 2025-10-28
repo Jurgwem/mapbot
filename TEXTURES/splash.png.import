@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dp3q1d33yardu"
-path="res://.godot/imported/raumplan_tdot_2024.jpg-a973ea4e9c72ae0e1d3a4e1123c7e7e7.ctex"
+uid="uid://b2xb5bsq0sqkh"
+path="res://.godot/imported/splash.png-214cb28968f03661ccc60212f6b1ee71.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://IMG/raumplan_tdot_2024.jpg"
-dest_files=["res://.godot/imported/raumplan_tdot_2024.jpg-a973ea4e9c72ae0e1d3a4e1123c7e7e7.ctex"]
+source_file="res://TEXTURES/splash.png"
+dest_files=["res://.godot/imported/splash.png-214cb28968f03661ccc60212f6b1ee71.ctex"]
 
 [params]
 
