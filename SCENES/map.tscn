@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://222gsl3rofox" path="res://SCRIPTS/wisskey.gd" id="1_0p100"]
 [ext_resource type="PackedScene" uid="uid://dr8frxmk7t2px" path="res://MODELS/wisskey/wisskey_proto.glb" id="1_hxggd"]
-[ext_resource type="PackedScene" uid="uid://2j31f4q6ejfr" path="res://MODELS/hallway/hallway.glb" id="2_p3hbw"]
+[ext_resource type="PackedScene" uid="uid://c0bkfpif831ex" path="res://INSTANCES/hallway_1.tscn" id="3_0p100"]
 
 [sub_resource type="Environment" id="Environment_0p100"]
 background_mode = 1
@@ -18,29 +18,15 @@ camera = NodePath("../Camera")
 
 [node name="right_eye_light" type="OmniLight3D" parent="wisskey/extras"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.078, 3.318, -0.072)
-visible = false
 
 [node name="left_eye_light" type="OmniLight3D" parent="wisskey/extras"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07827234, 3.317808, 0.07158154)
-visible = false
 
 [node name="model" parent="wisskey" instance=ExtResource("1_hxggd")]
 
 [node name="geo" type="Node3D" parent="."]
 
-[node name="hallway1" type="Node3D" parent="geo"]
-
-[node name="hallway" parent="geo/hallway1" instance=ExtResource("2_p3hbw")]
-
-[node name="SpotLight3D" type="SpotLight3D" parent="geo/hallway1"]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 9.131204, 0)
-light_color = Color(1, 0, 1, 1)
-light_energy = 10.0
-spot_range = 2.0
-spot_angle = 90.0
-
-[node name="ReflectionProbe" type="ReflectionProbe" parent="geo/hallway1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+[node name="hallway1" parent="geo" instance=ExtResource("3_0p100")]
 
 [node name="Camera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 27.772131, 0)
