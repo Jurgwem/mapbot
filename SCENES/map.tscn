@@ -1,36 +1,63 @@
-[gd_scene load_steps=5 format=3 uid="uid://bo6sljjyhdbtt"]
+[gd_scene load_steps=6 format=3 uid="uid://bo6sljjyhdbtt"]
 
 [ext_resource type="Script" uid="uid://222gsl3rofox" path="res://SCRIPTS/wisskey.gd" id="1_0p100"]
 [ext_resource type="PackedScene" uid="uid://dr8frxmk7t2px" path="res://MODELS/wisskey/wisskey_proto.glb" id="1_hxggd"]
-[ext_resource type="PackedScene" uid="uid://c0bkfpif831ex" path="res://INSTANCES/hallway_1.tscn" id="3_0p100"]
+[ext_resource type="PackedScene" uid="uid://c0bkfpif831ex" path="res://INSTANCES/hallway.tscn" id="3_0p100"]
 
-[sub_resource type="Environment" id="Environment_0p100"]
-background_mode = 1
-background_color = Color(0.82604194, 0.82604194, 0.82604194, 1)
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_0p100"]
+height = 4.0
+radius = 1.2
+
+[sub_resource type="Environment" id="Environment_peutm"]
+glow_enabled = true
 
 [node name="world" type="Node3D"]
 
-[node name="wisskey" type="Node3D" parent="." node_paths=PackedStringArray("camera")]
+[node name="wisskey" type="CharacterBody3D" parent="." node_paths=PackedStringArray("camera")]
 script = ExtResource("1_0p100")
-camera = NodePath("../Camera")
+camera = NodePath("../camera")
 
 [node name="extras" type="Node3D" parent="wisskey"]
 
 [node name="right_eye_light" type="OmniLight3D" parent="wisskey/extras"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.078, 3.318, -0.072)
+light_energy = 0.33
 
 [node name="left_eye_light" type="OmniLight3D" parent="wisskey/extras"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07827234, 3.317808, 0.07158154)
+light_energy = 0.33
 
 [node name="model" parent="wisskey" instance=ExtResource("1_hxggd")]
 
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wisskey"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.30958444, 1.856039, 0)
+shape = SubResource("CylinderShape3D_0p100")
+
 [node name="geo" type="Node3D" parent="."]
 
-[node name="hallway1" parent="geo" instance=ExtResource("3_0p100")]
+[node name="testHallway" type="Node3D" parent="geo"]
 
-[node name="Camera" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 27.772131, 0)
+[node name="Hallway" parent="geo/testHallway" instance=ExtResource("3_0p100")]
+
+[node name="Hallway2" parent="geo/testHallway" instance=ExtResource("3_0p100")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
+
+[node name="Hallway3" parent="geo/testHallway" instance=ExtResource("3_0p100")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16)
+
+[node name="camera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 16, 0)
 current = true
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_0p100")
+[node name="lighting" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="lighting"]
+environment = SubResource("Environment_peutm")
+
+[node name="sun1" type="DirectionalLight3D" parent="lighting"]
+transform = Transform3D(0.5591929, -0.58621806, 0.58621806, 0, 0.70710677, 0.70710677, -0.82903755, -0.39540908, 0.39540908, 0, 12, 0)
+light_energy = 0.33
+
+[node name="sun2" type="DirectionalLight3D" parent="lighting"]
+transform = Transform3D(-0.17330012, -0.9741238, 0.14508618, -0.5862181, 0.22040355, 0.77959645, -0.7914009, 0.05005201, -0.60924494, 4, 12, 0)
+light_energy = 0.33

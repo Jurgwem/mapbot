@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0bkfpif831ex"]
+
+[ext_resource type="PackedScene" uid="uid://2j31f4q6ejfr" path="res://MODELS/hallway/hallway.glb" id="1_7ocl1"]
+
+[node name="Hallway" type="StaticBody3D"]
+
+[node name="hallway" parent="." instance=ExtResource("1_7ocl1")]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.08910227, 9.131204, 0)
+light_energy = 8.0
+spot_range = 11.643555
+spot_angle = 62.01841
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+interior = true
