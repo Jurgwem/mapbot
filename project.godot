@@ -32,7 +32,8 @@ folder_colors={
 "res://MODELS/": "blue",
 "res://SCENES/": "purple",
 "res://SCRIPTS/": "red",
-"res://TEXTURES/": "orange"
+"res://TEXTURES/": "orange",
+"res://_EXPORT/": "gray"
 }
 
 [filesystem]
