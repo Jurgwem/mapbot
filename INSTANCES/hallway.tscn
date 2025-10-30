@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://c0bkfpif831ex"]
+[gd_scene load_steps=3 format=3 uid="uid://c0bkfpif831ex"]
 
 [ext_resource type="PackedScene" uid="uid://2j31f4q6ejfr" path="res://MODELS/hallway/hallway.glb" id="1_7ocl1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cvrvw"]
+size = Vector3(1, 9, 8)
 
 [node name="Hallway" type="StaticBody3D"]
 
@@ -15,3 +18,11 @@ spot_angle = 62.01841
 [node name="ReflectionProbe" type="ReflectionProbe" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 interior = true
+
+[node name="Collision1" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 4.5, 0)
+shape = SubResource("BoxShape3D_cvrvw")
+
+[node name="Collision2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 4.5, 0)
+shape = SubResource("BoxShape3D_cvrvw")
