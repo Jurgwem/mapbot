@@ -29,6 +29,7 @@ folder_colors={
 "res://GIMP/": "gray",
 "res://IMG/": "gray",
 "res://INSTANCES/": "green",
+"res://MAPS/": "pink",
 "res://MODELS/": "blue",
 "res://SCENES/": "purple",
 "res://SCRIPTS/": "red",
