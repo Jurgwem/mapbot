@@ -11,7 +11,7 @@ extends CharacterBody3D
 @export var cameraRotationSteps : int = 45
 @export var FirstPersonRotationSpeed : float = 3
 @export var PathLineThickness : float = 0.5
-@export var PathLineColor : Color = Color(1, 0.73, 0)
+@export var PathLineColor : Color = Color(1, 0, 0)
 @export var PathUpdateCooldown : float = 0.03
 
 @onready var path_line_node : MeshInstance3D = $PathLine
