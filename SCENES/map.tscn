@@ -60,7 +60,7 @@ skeleton = NodePath("../..")
 [node name="camera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 16, 0)
 current = true
-size = 13.01
+size = 8.0
 
 [node name="Control" type="Control" parent="camera"]
 layout_mode = 3
