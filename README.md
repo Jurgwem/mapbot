@@ -12,7 +12,8 @@ Wortspiel aus "Robot" und "Map", gleichzeitige Anspielung auf Mapbot.
 |RMB|Route löschen|
 |Q, E|Drehung der Kamera|
 |Mausrad|Rein- und Rauszoomen|
-|C|Zwischen Kamera Modi wechseln|
+|C|Zwischen Kamera Perspektive wechseln|
+|V|Zwischen Kamera Projektionsart wechseln|
 |R|Reset|
 
 
