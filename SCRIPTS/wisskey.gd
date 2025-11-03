@@ -54,10 +54,14 @@ func _input(event: InputEvent) -> void:
 			hasLerpedCameraTransition = false;
 			isFirstPerson = false
 			current_path_target = null
+			isOrthogonalProjection = false
 			clear_path_line()
+			updateCameraProjection()
 		
 		if event.is_action_pressed("zoomIn"):
-			zoom -= zoomFactor
+			#check lower bound, otherwise cam-lerp will go boom
+			if zoom >= 2:
+				zoom -= zoomFactor
 			
 		if event.is_action_pressed("zoomOut"):
 			zoom += zoomFactor
@@ -110,7 +114,9 @@ func updateCameraProjection() -> void:
 		camera.projection = Camera3D.PROJECTION_PERSPECTIVE
 		
 func _physics_process(delta: float) -> void:
-	$"../camera/Control/FPS".text = str(Engine.get_frames_per_second())
+	$"../camera/Control/FPS".text = str(Engine.get_frames_per_second()) + " / " + str(1 / delta)
+	
+	print(zoom)
 	
 	#SLOWDOWN
 	if xSpeed != 0:
