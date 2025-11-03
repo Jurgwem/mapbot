@@ -20,9 +20,9 @@ var zoom : float = 0
 var currentAcceleration : float = 0
 var camRotation : int = 0
 var isFirstPerson : bool = false
+var isOrthogonalProjection : bool = false
 var ySpeed : float = 0
 var xSpeed : float = 0
-
 var cameraResetHeight : int = 16
 var nullVector3 : Vector3 = Vector3.ZERO
 var hasLerpedCameraTransition : bool = false;
@@ -66,6 +66,13 @@ func _input(event: InputEvent) -> void:
 			isFirstPerson = !isFirstPerson	
 			hasLerpedCameraTransition = false;
 			zoom = cameraResetHeight
+			isOrthogonalProjection = false
+			updateCameraProjection()
+			
+		if event.is_action_pressed("toggleCamProjection"):
+			if !isFirstPerson:
+				isOrthogonalProjection = !isOrthogonalProjection
+				updateCameraProjection()
 			
 		if event.is_action_pressed("RotateClockwise"):
 			camRotation += cameraRotationSteps
@@ -95,6 +102,12 @@ func _input(event: InputEvent) -> void:
 		if event.is_action_pressed("RMB"):
 			current_path_target = null
 			clear_path_line()
+
+func updateCameraProjection() -> void:
+	if isOrthogonalProjection:
+		camera.projection = Camera3D.PROJECTION_ORTHOGONAL
+	else:
+		camera.projection = Camera3D.PROJECTION_PERSPECTIVE
 		
 func _physics_process(delta: float) -> void:
 	$"../camera/Control/FPS".text = str(Engine.get_frames_per_second())
@@ -152,6 +165,9 @@ func _physics_process(delta: float) -> void:
 		target_pos.z = global_position.z
 		target_pos.y = zoom
 		
+		#ORTHOGONAL CAMERA SIZE LERP
+		camera.size = lerp(camera.size, zoom * 0.9, cameraSmoothing * delta)
+		
 		camera.global_position = camera.global_position.lerp(target_pos, cameraSmoothing * delta)
 		
 		newCamRoation = camera.rotation.lerp(Vector3(deg_to_rad(-90), 0, 0), cameraSmoothing * delta)
@@ -159,7 +175,6 @@ func _physics_process(delta: float) -> void:
 		camera.rotation = newCamRoation
 	else:
 		#FIRST PERSON CAM LERPING
-		print(camera.position.distance_squared_to(position + Vector3(0, 4, 0)));
 		if camera.position.distance_squared_to(position + Vector3(0, 4, 0)) <= 0.0001:
 			hasLerpedCameraTransition = true;
 			
@@ -208,6 +223,7 @@ func update_realtime_path() -> void:
 func find_and_draw_path(start_point : Vector3, end_point : Vector3) -> void:
 	var map_rid: RID = get_world_3d().navigation_map
 	var path_points : PackedVector3Array = NavigationServer3D.map_get_path(map_rid, start_point, end_point, true)
+	path_points[0] = global_position;
 	draw_path_line(path_points)
 
 # DRAW PATH-LINE
