@@ -11,13 +11,13 @@ glow_enabled = true
 fog_light_color = Color(1, 1, 1, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_a3mtm"]
-font_size = 64
-outline_size = 48
+font_size = 96
+outline_size = 64
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_c7j8n"]
-font_size = 64
-outline_size = 48
+font_size = 96
+outline_size = 64
 outline_color = Color(0, 0, 0, 1)
 
 [node name="intermission" type="Node3D"]

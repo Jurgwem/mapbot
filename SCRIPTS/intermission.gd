@@ -10,7 +10,7 @@ func _ready() -> void:
 	$HUD/BOTTOM_CONTAINER2/BOTTOM.text = ""
 
 func _physics_process(delta: float) -> void:
-	$wisskey_proto.rotate_y(rotateSpeed * delta / 10)
+	$wisskey_proto.rotate_y(-rotateSpeed * delta / 10)
 	
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("mute"):
@@ -18,11 +18,11 @@ func _input(event: InputEvent) -> void:
 		updateAudio()
 		
 	if event.is_action_pressed("zoomIn"):
-		textIndex = (textIndex + 1) % 3
+		textIndex = (textIndex + 1) % texts[0].size()
 		updateText()
 		
 	if event.is_action_pressed("zoomOut"):
-		textIndex = (textIndex - 1) % 3
+		textIndex = (textIndex - 1) % texts[0].size()
 		updateText()
 		
 func updateText() -> void:

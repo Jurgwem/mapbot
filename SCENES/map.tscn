@@ -4,6 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://dr8frxmk7t2px" path="res://MODELS/wisskey/wisskey_proto.glb" id="1_hxggd"]
 [ext_resource type="PackedScene" uid="uid://cd6id4ad0hyrq" path="res://MAPS/map_test.tscn" id="1_peutm"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_0p100"]
+font_size = 24
+font_color = Color(1, 1, 1, 0.5019608)
+outline_size = 8
+outline_color = Color(0, 0, 0, 0.5019608)
+
 [sub_resource type="Environment" id="Environment_peutm"]
 glow_enabled = true
 
@@ -11,13 +17,33 @@ glow_enabled = true
 height = 4.0
 radius = 1.2
 
-[sub_resource type="LabelSettings" id="LabelSettings_0p100"]
-font_size = 24
-font_color = Color(1, 1, 1, 0.5019608)
-outline_size = 8
-outline_color = Color(0, 0, 0, 0.5019608)
-
 [node name="world" type="Node3D"]
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = -40.0
+offset_right = 212.0
+grow_vertical = 0
+
+[node name="FPS" type="Label" parent="HUD/MarginContainer"]
+layout_mode = 2
+text = "NaN"
+label_settings = SubResource("LabelSettings_0p100")
+
+[node name="BuildTag" type="Label" parent="HUD/MarginContainer"]
+layout_mode = 2
+text = "prototype build"
+label_settings = SubResource("LabelSettings_0p100")
+
+[node name="camera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 16, 0)
+current = true
+size = 8.0
 
 [node name="lighting" type="Node3D" parent="."]
 
@@ -54,31 +80,5 @@ shape = SubResource("CylinderShape3D_0p100")
 
 [node name="PathLine" type="MeshInstance3D" parent="wisskey"]
 skeleton = NodePath("../..")
-
-[node name="camera" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 16, 0)
-current = true
-size = 8.0
-
-[node name="HUD" type="CanvasLayer" parent="."]
-
-[node name="MarginContainer" type="MarginContainer" parent="HUD"]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 32.0
-offset_top = -40.0
-offset_right = 212.0
-grow_vertical = 0
-
-[node name="FPS" type="Label" parent="HUD/MarginContainer"]
-layout_mode = 2
-text = "NaN"
-label_settings = SubResource("LabelSettings_0p100")
-
-[node name="BuildTag" type="Label" parent="HUD/MarginContainer"]
-layout_mode = 2
-text = "prototype build"
-label_settings = SubResource("LabelSettings_0p100")
 
 [node name="map_test" parent="." instance=ExtResource("1_peutm")]
