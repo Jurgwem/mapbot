@@ -1,0 +1,98 @@
+[gd_scene load_steps=8 format=3 uid="uid://dcumc5jd77jri"]
+
+[ext_resource type="Script" uid="uid://cef8vx2v3ykjq" path="res://SCRIPTS/intermission.gd" id="1_3mb88"]
+[ext_resource type="PackedScene" uid="uid://dr8frxmk7t2px" path="res://MODELS/wisskey/wisskey_proto.glb" id="1_n8y3p"]
+[ext_resource type="PackedScene" uid="uid://c0bkfpif831ex" path="res://INSTANCES/hallway.tscn" id="2_d2y7b"]
+[ext_resource type="AudioStream" uid="uid://807apu1xokj0" path="res://AUDIO/funky.mp3" id="4_a3mtm"]
+
+[sub_resource type="Environment" id="Environment_3mb88"]
+ambient_light_color = Color(1, 1, 1, 1)
+glow_enabled = true
+fog_light_color = Color(1, 1, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_a3mtm"]
+font_size = 64
+outline_size = 48
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_c7j8n"]
+font_size = 64
+outline_size = 48
+outline_color = Color(0, 0, 0, 1)
+
+[node name="intermission" type="Node3D"]
+script = ExtResource("1_3mb88")
+
+[node name="lighting" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="lighting"]
+environment = SubResource("Environment_3mb88")
+
+[node name="sun1" type="DirectionalLight3D" parent="lighting"]
+transform = Transform3D(0.5591929, -0.58621806, 0.58621806, 0, 0.70710677, 0.70710677, -0.82903755, -0.39540908, 0.39540908, 0, 12, 0)
+light_energy = 0.33
+
+[node name="sun2" type="DirectionalLight3D" parent="lighting"]
+transform = Transform3D(-0.17330012, -0.9741238, 0.14508618, -0.5862181, 0.22040355, 0.77959645, -0.7914009, 0.05005201, -0.60924494, 4, 12, 0)
+light_energy = 0.33
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.32226565, 0.29253072, -0.90031695, 0, 0.95105654, 0.309017, 0.94664925, -0.09958557, 0.30649287, -3.5721622, 3.8061996, 0)
+fov = 60.0
+
+[node name="wisskey_proto" parent="." instance=ExtResource("1_n8y3p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6797688, 0, -2.0118556)
+
+[node name="geometry" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="Hallway2" parent="geometry" instance=ExtResource("2_d2y7b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
+
+[node name="Hallway" parent="geometry" instance=ExtResource("2_d2y7b")]
+
+[node name="Hallway3" parent="geometry" instance=ExtResource("2_d2y7b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -24)
+
+[node name="Hallway4" parent="geometry" instance=ExtResource("2_d2y7b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16)
+
+[node name="Hallway5" parent="geometry" instance=ExtResource("2_d2y7b")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 9)
+
+[node name="Hallway6" parent="geometry" instance=ExtResource("2_d2y7b")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -33)
+
+[node name="funkyPlayer" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+stream = ExtResource("4_a3mtm")
+volume_db = -20.0
+autoplay = true
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="TOP_CONTAINER" type="MarginContainer" parent="HUD"]
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="TOP" type="Label" parent="HUD/TOP_CONTAINER"]
+layout_mode = 2
+text = "TEST"
+label_settings = SubResource("LabelSettings_a3mtm")
+horizontal_alignment = 1
+
+[node name="BOTTOM_CONTAINER2" type="MarginContainer" parent="HUD"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="BOTTOM" type="Label" parent="HUD/BOTTOM_CONTAINER2"]
+layout_mode = 2
+text = "TEST"
+label_settings = SubResource("LabelSettings_c7j8n")
+horizontal_alignment = 1

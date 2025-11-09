@@ -53,7 +53,6 @@ func _input(event: InputEvent) -> void:
 			global_position = nullVector3
 			hasLerpedCameraTransition = false;
 			isFirstPerson = false
-			current_path_target = null
 			isOrthogonalProjection = false
 			clear_path_line()
 			updateCameraProjection()
@@ -91,20 +90,21 @@ func _input(event: InputEvent) -> void:
 			currentAcceleration = accel
 			
 		if event.is_action_pressed("LMB") and !isFirstPerson:
-			var mousePos2D : Vector2 = get_viewport().get_mouse_position()
-			var ray_origin = camera.project_ray_origin(mousePos2D)
-			var ray_direction = camera.project_ray_normal(mousePos2D)
-			
-			var ground_plane = Plane(Vector3.UP, 0.0)
-			var intersection_3d = ground_plane.intersects_ray(ray_origin, ray_direction)
-			
-			if intersection_3d != null:
-				current_path_target = intersection_3d
-				path_update_timer = 0.0 
-				update_realtime_path()
+			if hasNav():
+				var mousePos2D : Vector2 = get_viewport().get_mouse_position()
+				var ray_origin = camera.project_ray_origin(mousePos2D)
+				var ray_direction = camera.project_ray_normal(mousePos2D)
+				
+				var ground_plane = Plane(Vector3.UP, 0.0)
+				var intersection_3d = ground_plane.intersects_ray(ray_origin, ray_direction)
+				
+				if intersection_3d != null:
+					current_path_target = intersection_3d
+					path_update_timer = 0.0 
+					update_realtime_path()
 			
 		if event.is_action_pressed("RMB"):
-			current_path_target = null
+			
 			clear_path_line()
 
 func updateCameraProjection() -> void:
@@ -113,8 +113,16 @@ func updateCameraProjection() -> void:
 	else:
 		camera.projection = Camera3D.PROJECTION_PERSPECTIVE
 		
+func hasNav() -> bool:
+	var root : Node3D = get_tree().current_scene
+	
+	for node in root.get_children():
+		if node is NavigationRegion3D:
+			return true
+	return false
+			
 func _physics_process(delta: float) -> void:
-	$"../camera/Control/FPS".text = str(Engine.get_frames_per_second()) + " / " + str(1 / delta)
+	$"../HUD/MarginContainer/FPS".text = "\t" + str(Engine.get_frames_per_second()) + " / " + str(1 / delta) + "\n\n"
 	
 	#SLOWDOWN
 	if xSpeed != 0:
@@ -300,5 +308,6 @@ func draw_path_line(path_points : PackedVector3Array) -> void:
 
 #DEL PATH
 func clear_path_line() -> void:
+	current_path_target = null
 	if path_line_node.mesh != null:
 		path_line_node.mesh.clear_surfaces()

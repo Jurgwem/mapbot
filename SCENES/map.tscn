@@ -19,8 +19,6 @@ outline_color = Color(0, 0, 0, 0.5019608)
 
 [node name="world" type="Node3D"]
 
-[node name="map_test" parent="." instance=ExtResource("1_peutm")]
-
 [node name="lighting" type="Node3D" parent="."]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="lighting"]
@@ -62,29 +60,25 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1
 current = true
 size = 8.0
 
-[node name="Control" type="Control" parent="camera"]
-layout_mode = 3
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD"]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
+offset_left = 32.0
 offset_top = -40.0
-offset_right = 40.0
+offset_right = 212.0
 grow_vertical = 0
 
-[node name="BuildTag" type="Label" parent="camera/Control"]
-layout_mode = 0
-offset_left = 40.0
-offset_top = -28.0
-offset_right = 281.0
-offset_bottom = 17.0
+[node name="FPS" type="Label" parent="HUD/MarginContainer"]
+layout_mode = 2
+text = "NaN"
+label_settings = SubResource("LabelSettings_0p100")
+
+[node name="BuildTag" type="Label" parent="HUD/MarginContainer"]
+layout_mode = 2
 text = "prototype build"
 label_settings = SubResource("LabelSettings_0p100")
 
-[node name="FPS" type="Label" parent="camera/Control"]
-layout_mode = 0
-offset_left = 40.0
-offset_top = -55.0
-offset_right = 281.0
-offset_bottom = -10.0
-text = "NaN"
-label_settings = SubResource("LabelSettings_0p100")
+[node name="map_test" parent="." instance=ExtResource("1_peutm")]
