@@ -1,29 +1,147 @@
-[gd_scene load_steps=4 format=3 uid="uid://cd6id4ad0hyrq"]
+[gd_scene load_steps=11 format=3 uid="uid://cd6id4ad0hyrq"]
 
 [ext_resource type="PackedScene" uid="uid://c0bkfpif831ex" path="res://INSTANCES/hallway.tscn" id="1_t5f34"]
+[ext_resource type="PackedScene" uid="uid://h8pk45epc58s" path="res://INSTANCES/hallway_short.tscn" id="2_niwns"]
+[ext_resource type="PackedScene" uid="uid://dr8frxmk7t2px" path="res://MODELS/wisskey/wisskey_proto.glb" id="3_u7sx0"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_0p100"]
-vertices = PackedVector3Array(-6.5, 0.46951532, -21.25, -4.5, 0.46951532, -22, -4.5, 0.46951532, -48, -7, 0.46951532, -20.25, -48, 0.46951532, -48, -48, 0.46951532, -18.25, -7, 0.46951532, -18.25, -1.75, 0.46951532, -20.25, -1.75, 0.46951532, -18.25, 1.75, 0.46951532, -18.25, 1.75, 0.46951532, -20.25, -2.25, 0.46951532, -21.25, 2.25, 0.46951532, -21.25, 4.5, 0.46951532, -22, 4.5, 0.46951532, -48, 6.75, 0.46951532, -21.25, 7.25, 0.46951532, -18.75, 48, 0.46951532, -19, 48, 0.46951532, -48, 7.25, 0.46951532, 2.75, 48, 0.46951532, 3, -48, 0.46951532, 2.5, -7, 0.46951532, 2.5, -1.75, 0.46951532, 2.25, 1.75, 0.46951532, 2.25, 1.75, 0.46951532, 4.25, -1.75, 0.46951532, 4.25, 4.5, 0.46951532, 6.25, 2.25, 0.46951532, 5.25, -2.25, 0.46951532, 5.25, -4.5, 0.46951532, 6.25, -4.5, 0.46951532, 48, 4.5, 0.46951532, 48, -7, 0.46951532, 4.5, -6.5, 0.46951532, 5.5, -48, 0.46951532, 48, 6.75, 0.46951532, 5.25, 48, 0.46951532, 48)
-polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(0, 3, 2), PackedInt32Array(2, 3, 4), PackedInt32Array(4, 3, 5), PackedInt32Array(3, 6, 5), PackedInt32Array(10, 9, 7), PackedInt32Array(7, 9, 8), PackedInt32Array(11, 1, 12), PackedInt32Array(12, 1, 13), PackedInt32Array(13, 1, 2), PackedInt32Array(13, 2, 14), PackedInt32Array(7, 11, 10), PackedInt32Array(10, 11, 12), PackedInt32Array(15, 13, 14), PackedInt32Array(15, 14, 16), PackedInt32Array(16, 14, 17), PackedInt32Array(17, 14, 18), PackedInt32Array(16, 17, 19), PackedInt32Array(19, 17, 20), PackedInt32Array(5, 6, 21), PackedInt32Array(21, 6, 22), PackedInt32Array(8, 9, 23), PackedInt32Array(23, 9, 24), PackedInt32Array(26, 23, 25), PackedInt32Array(25, 23, 24), PackedInt32Array(28, 27, 29), PackedInt32Array(29, 27, 30), PackedInt32Array(30, 27, 32), PackedInt32Array(30, 32, 31), PackedInt32Array(25, 28, 26), PackedInt32Array(26, 28, 29), PackedInt32Array(21, 22, 33), PackedInt32Array(21, 33, 34), PackedInt32Array(30, 31, 34), PackedInt32Array(34, 31, 35), PackedInt32Array(34, 35, 21), PackedInt32Array(36, 19, 20), PackedInt32Array(27, 36, 32), PackedInt32Array(32, 36, 37), PackedInt32Array(37, 36, 20)]
+vertices = PackedVector3Array(-126, 0.46951532, -2.25, -7, 0.46951532, -2.25, -7, 0.46951532, -4.25, -6.5, 0.46951532, -5.25, -4.5, 0.46951532, -6, -4.5, 0.46951532, -126, -126, 0.46951532, -126, -1.75, 0.46951532, -4.25, -1.75, 0.46951532, -2.25, 1.75, 0.46951532, -2.25, 1.75, 0.46951532, -4.25, -2.25, 0.46951532, -5.25, 2.25, 0.46951532, -5.25, 4.5, 0.46951532, -6, 4.5, 0.46951532, -126, 7.25, 0.46951532, -1, 12, 0.46951532, -0.75, 12.5, 0.46951532, -3.25, 7.25, 0.46951532, -4.25, 6.75, 0.46951532, -5.25, 14.75, 0.46951532, -4, 14.75, 0.46951532, -126, 17.25, 0.46951532, -2.25, 17.25, 0.46951532, 0, 20.75, 0.46951532, 0, 20.75, 0.46951532, -2.25, 16.75, 0.46951532, -3.25, 21.25, 0.46951532, -3.25, 23.5, 0.46951532, -4, 23.5, 0.46951532, -126, 26.25, 0.46951532, -2.25, 26.25, 0.46951532, 0, 29.75, 0.46951532, 0, 30.25, 0.46951532, -2, 32, 0.46951532, -3.25, 33, 0.46951532, -3.25, 33, 0.46951532, -126, 25.75, 0.46951532, -3.25, 36.25, 0.46951532, -1, 36.25, 0.46951532, 0, 126, 0.46951532, 0, 35, 0.46951532, -2.75, 126, 0.46951532, -126, -126, 0.46951532, 2.5, -7, 0.46951532, 2.5, 1.75, 0.46951532, 4.25, -1.75, 0.46951532, 4.25, -2.75, 0.46951532, 5.75, -4.5, 0.46951532, 6.25, -4.5, 0.46951532, 126, 4.5, 0.46951532, 126, 4.5, 0.46951532, 6.25, 2.75, 0.46951532, 5.75, 12, 0.46951532, 2.5, 7.25, 0.46951532, 4.25, 14.5, 0.46951532, 4.25, 6.25, 0.46951532, 5.75, 14.5, 0.46951532, 126, 12.75, 0.46951532, 3.75, 20.75, 0.46951532, 2.25, 17.25, 0.46951532, 2.25, 23.5, 0.46951532, 4.25, 21.25, 0.46951532, 3.25, 16.75, 0.46951532, 3.25, 23.5, 0.46951532, 126, 26.25, 0.46951532, 2.25, 30.25, 0.46951532, 2, 33, 0.46951532, 3.25, 32, 0.46951532, 3.25, 33, 0.46951532, 126, 25.75, 0.46951532, 3.25, 36.25, 0.46951532, 1, 35, 0.46951532, 2.75, 126, 0.46951532, 126, -7, 0.46951532, 4.5, -6.5, 0.46951532, 5.5, -126, 0.46951532, 126)
+polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(3, 2, 0), PackedInt32Array(4, 3, 5), PackedInt32Array(5, 3, 6), PackedInt32Array(6, 3, 0), PackedInt32Array(10, 9, 7), PackedInt32Array(7, 9, 8), PackedInt32Array(11, 4, 12), PackedInt32Array(12, 4, 13), PackedInt32Array(13, 4, 5), PackedInt32Array(13, 5, 14), PackedInt32Array(7, 11, 10), PackedInt32Array(10, 11, 12), PackedInt32Array(16, 15, 17), PackedInt32Array(17, 15, 18), PackedInt32Array(19, 13, 20), PackedInt32Array(20, 13, 14), PackedInt32Array(20, 14, 21), PackedInt32Array(18, 19, 17), PackedInt32Array(17, 19, 20), PackedInt32Array(25, 24, 22), PackedInt32Array(22, 24, 23), PackedInt32Array(26, 20, 27), PackedInt32Array(27, 20, 28), PackedInt32Array(28, 20, 21), PackedInt32Array(28, 21, 29), PackedInt32Array(22, 26, 25), PackedInt32Array(25, 26, 27), PackedInt32Array(31, 30, 32), PackedInt32Array(32, 30, 33), PackedInt32Array(34, 28, 35), PackedInt32Array(35, 28, 29), PackedInt32Array(35, 29, 36), PackedInt32Array(33, 30, 37), PackedInt32Array(33, 37, 34), PackedInt32Array(34, 37, 28), PackedInt32Array(40, 39, 38), PackedInt32Array(40, 38, 41), PackedInt32Array(41, 35, 40), PackedInt32Array(40, 35, 36), PackedInt32Array(40, 36, 42), PackedInt32Array(0, 1, 43), PackedInt32Array(43, 1, 44), PackedInt32Array(46, 8, 45), PackedInt32Array(45, 8, 9), PackedInt32Array(52, 51, 47), PackedInt32Array(47, 51, 48), PackedInt32Array(48, 51, 50), PackedInt32Array(48, 50, 49), PackedInt32Array(45, 52, 46), PackedInt32Array(46, 52, 47), PackedInt32Array(16, 53, 15), PackedInt32Array(15, 53, 54), PackedInt32Array(56, 55, 51), PackedInt32Array(51, 55, 50), PackedInt32Array(50, 55, 57), PackedInt32Array(58, 54, 53), PackedInt32Array(54, 58, 56), PackedInt32Array(56, 58, 55), PackedInt32Array(60, 23, 59), PackedInt32Array(59, 23, 24), PackedInt32Array(62, 61, 63), PackedInt32Array(63, 61, 55), PackedInt32Array(55, 61, 64), PackedInt32Array(55, 64, 57), PackedInt32Array(59, 62, 60), PackedInt32Array(60, 62, 63), PackedInt32Array(31, 32, 65), PackedInt32Array(65, 32, 66), PackedInt32Array(68, 67, 61), PackedInt32Array(61, 67, 64), PackedInt32Array(64, 67, 69), PackedInt32Array(70, 65, 66), PackedInt32Array(66, 68, 70), PackedInt32Array(70, 68, 61), PackedInt32Array(71, 39, 40), PackedInt32Array(72, 71, 40), PackedInt32Array(72, 40, 67), PackedInt32Array(67, 40, 69), PackedInt32Array(69, 40, 73), PackedInt32Array(43, 44, 74), PackedInt32Array(43, 74, 75), PackedInt32Array(48, 49, 75), PackedInt32Array(75, 49, 76), PackedInt32Array(75, 76, 43)]
 agent_radius = 2.0
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_niwns"]
+viewport_path = NodePath("signs/hallway_Sign/SubViewport_hallway")
+
+[sub_resource type="LabelSettings" id="LabelSettings_niwns"]
+font_size = 64
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_u7sx0"]
+viewport_path = NodePath("signs/hallwayShort_Sign/SubViewport_hallwayShort")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_4tj5s"]
+viewport_path = NodePath("signs/wisskey_proto_Sign/SubViewport_wisskey_proto")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_u7sx0"]
+height = 4.0
+radius = 1.2
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_peutm"]
-size = Vector3(100, 1, 100)
+size = Vector3(256, 1, 256)
 
 [node name="map_test" type="NavigationRegion3D"]
 navigation_mesh = SubResource("NavigationMesh_0p100")
 
+[node name="signs" type="Node3D" parent="."]
+
+[node name="hallway_Sign" type="Sprite3D" parent="signs"]
+transform = Transform3D(2, 0, 0, 0, -8.742278e-08, 2, 0, -2, -8.742278e-08, 0, 0, 12)
+modulate = Color(0, 0, 0, 1)
+texture = SubResource("ViewportTexture_niwns")
+
+[node name="SubViewport_hallway" type="SubViewport" parent="signs/hallway_Sign"]
+transparent_bg = true
+
+[node name="MarginContainer" type="MarginContainer" parent="signs/hallway_Sign/SubViewport_hallway"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -118.5
+offset_top = -44.0
+offset_right = 118.5
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="signs/hallway_Sign/SubViewport_hallway/MarginContainer"]
+layout_mode = 2
+text = "hallway"
+label_settings = SubResource("LabelSettings_niwns")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="hallwayShort_Sign" type="Sprite3D" parent="signs"]
+transform = Transform3D(2, 0, 0, 0, -8.742278e-08, 2, 0, -2, -8.742278e-08, 19, 0, 11)
+modulate = Color(0, 0, 0, 1)
+texture = SubResource("ViewportTexture_u7sx0")
+
+[node name="SubViewport_hallwayShort" type="SubViewport" parent="signs/hallwayShort_Sign"]
+transparent_bg = true
+
+[node name="MarginContainer" type="MarginContainer" parent="signs/hallwayShort_Sign/SubViewport_hallwayShort"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -118.5
+offset_top = -44.0
+offset_right = 118.5
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="signs/hallwayShort_Sign/SubViewport_hallwayShort/MarginContainer"]
+layout_mode = 2
+text = "hallwayShort"
+label_settings = SubResource("LabelSettings_niwns")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="wisskey_proto_Sign" type="Sprite3D" parent="signs"]
+transform = Transform3D(2, 0, 0, 0, -8.742278e-08, 2, 0, -2, -8.742278e-08, 33, 0, 10)
+modulate = Color(0, 0, 0, 1)
+texture = SubResource("ViewportTexture_4tj5s")
+
+[node name="SubViewport_wisskey_proto" type="SubViewport" parent="signs/wisskey_proto_Sign"]
+transparent_bg = true
+
+[node name="MarginContainer" type="MarginContainer" parent="signs/wisskey_proto_Sign/SubViewport_wisskey_proto"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -118.5
+offset_top = -44.0
+offset_right = 118.5
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="signs/wisskey_proto_Sign/SubViewport_wisskey_proto/MarginContainer"]
+layout_mode = 2
+text = "wisskey_proto"
+label_settings = SubResource("LabelSettings_niwns")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="geo" type="Node3D" parent="."]
 
-[node name="testHallway" type="Node3D" parent="geo"]
+[node name="Hallway" parent="geo" instance=ExtResource("1_t5f34")]
 
-[node name="Hallway" parent="geo/testHallway" instance=ExtResource("1_t5f34")]
+[node name="hallwayShort" parent="geo" instance=ExtResource("2_niwns")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, 0)
 
-[node name="Hallway2" parent="geo/testHallway" instance=ExtResource("1_t5f34")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
+[node name="wisskey_proto" type="StaticBody3D" parent="geo"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 0, 0)
 
-[node name="Hallway3" parent="geo/testHallway" instance=ExtResource("1_t5f34")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16)
+[node name="wisskey_proto" parent="geo/wisskey_proto" instance=ExtResource("3_u7sx0")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="geo/wisskey_proto"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.032984376, 1.856039, 0)
+shape = SubResource("CylinderShape3D_u7sx0")
+
+[node name="extras" type="Node3D" parent="geo/wisskey_proto"]
+
+[node name="right_eye_light" type="OmniLight3D" parent="geo/wisskey_proto/extras"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.078, 3.318, -0.072)
+light_energy = 0.33
+
+[node name="left_eye_light" type="OmniLight3D" parent="geo/wisskey_proto/extras"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07827234, 3.317808, 0.07158154)
+light_energy = 0.33
 
 [node name="floor" type="StaticBody3D" parent="."]
 
