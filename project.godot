@@ -17,6 +17,10 @@ boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/image="uid://dghae7s2cgul6"
 config/icon="uid://lp6plfo8jt5c"
 
+[autoload]
+
+Autoload="*res://SCRIPTS/autoload.gd"
+
 [display]
 
 window/size/viewport_width=1536
@@ -28,13 +32,14 @@ folder_colors={
 "res://BLENDER/": "gray",
 "res://GIMP/": "gray",
 "res://IMG/": "gray",
-"res://INSTANCES/": "green",
-"res://MAPS/": "pink",
-"res://MODELS/": "blue",
-"res://SCENES/": "purple",
-"res://SCRIPTS/": "red",
-"res://TEXTURES/": "orange",
-"res://_EXPORT/": "gray"
+"res://INSTANCES/": "red",
+"res://MAPS/": "orange",
+"res://MATERIALS/": "yellow",
+"res://MODELS/": "green",
+"res://SCENES/": "teal",
+"res://SCRIPTS/": "blue",
+"res://TEXTURES/": "purple",
+"res://_EXPORT/": "pink"
 }
 
 [filesystem]
@@ -123,5 +128,6 @@ toggleCamProjection={
 
 [rendering]
 
+textures/canvas_textures/default_texture_repeat=2
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"

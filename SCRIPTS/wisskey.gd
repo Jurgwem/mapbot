@@ -116,8 +116,6 @@ func updateCameraProjection() -> void:
 func _physics_process(delta: float) -> void:
 	$"../camera/Control/FPS".text = str(Engine.get_frames_per_second()) + " / " + str(1 / delta)
 	
-	print(zoom)
-	
 	#SLOWDOWN
 	if xSpeed != 0:
 		xSpeed *= friction

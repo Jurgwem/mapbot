@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://dmram56xo4dxq"]
+
+[ext_resource type="Texture2D" uid="uid://c8mshrqcwyhxf" path="res://MODELS/hallway/hallway_hallway_diffuse.png" id="1_v2lt7"]
+[ext_resource type="Texture2D" uid="uid://dr6dabbeeyiq2" path="res://MODELS/hallway/hallway_hallway_rough.png" id="2_74w0t"]
+
+[resource]
+resource_name = "hallway_comb"
+cull_mode = 2
+albedo_texture = ExtResource("1_v2lt7")
+metallic_texture = ExtResource("2_74w0t")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_74w0t")
+roughness_texture_channel = 1
+texture_filter = 4
