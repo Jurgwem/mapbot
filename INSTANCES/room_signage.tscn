@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0wpd7eucp3pb"]
+
+[ext_resource type="Script" uid="uid://ch14mi67irqly" path="res://SCRIPTS/room_signage.gd" id="1_omb41"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_wd2jd"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="LabelSettings" id="LabelSettings_4tj5s"]
+font_size = 64
+
+[node name="roomSignage" type="Sprite3D"]
+transform = Transform3D(2, 0, 0, 0, -8.742278e-08, 2, 0, -2, -8.742278e-08, 0, 0, 0)
+modulate = Color(0, 0, 0, 1)
+texture = SubResource("ViewportTexture_wd2jd")
+script = ExtResource("1_omb41")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+msaa_3d = 1
+size = Vector2i(1024, 1024)
+
+[node name="MarginContainer" type="MarginContainer" parent="SubViewport"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="SubViewport/MarginContainer"]
+layout_mode = 2
+text = "TITLE NOT SET"
+label_settings = SubResource("LabelSettings_4tj5s")
+horizontal_alignment = 1
+vertical_alignment = 1
