@@ -1,6 +1,6 @@
 extends Node3D
 
-var rotateSpeed : float = 8
+var rotateSpeed : float = 32
 var muteToggle : bool = false;
 var textIndex : int = 0
 var texts = [["", "INTERMISSION", "TECHNICAL"], ["", "INTERMISSION", "DIFFICULTIES"]]

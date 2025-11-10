@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://h8pk45epc58s"]
+
+[ext_resource type="PackedScene" uid="uid://bw1iavrr7d37o" path="res://MODELS/hallwayShort/hallwayShort.glb" id="1_tfhwk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_niwns"]
+size = Vector3(1, 9, 4)
+
+[node name="hallwayShort" type="StaticBody3D"]
+
+[node name="hallwayShort2" parent="." instance=ExtResource("1_tfhwk")]
+
+[node name="Collision1" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 4.5, 0)
+shape = SubResource("BoxShape3D_niwns")
+
+[node name="Collision2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 4.5, 0)
+shape = SubResource("BoxShape3D_niwns")
