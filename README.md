@@ -16,6 +16,7 @@ Wortspiel aus "Robot" und "Map", gleichzeitige Anspielung auf Mapbot.
 |M|Audio Stummschalten / neustarten|
 |C|Zwischen Kamera Perspektive wechseln|
 |V|Zwischen Kamera Projektionsart wechseln|
+|F|Zwischen Fenstermodi wechseln (Windowed, Fullscreen, Borderless)|
 |R|Reset|
 
 ## Kartenzahlen
