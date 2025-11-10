@@ -1,5 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://cd6id4ad0hyrq"]
 
+[ext_resource type="PackedScene" uid="uid://cc8ewqro6e7rd" path="res://INSTANCES/debug_signage.tscn" id="1_4tj5s"]
 [ext_resource type="PackedScene" uid="uid://c0bkfpif831ex" path="res://INSTANCES/hallway.tscn" id="1_t5f34"]
 [ext_resource type="PackedScene" uid="uid://h8pk45epc58s" path="res://INSTANCES/hallway_short.tscn" id="2_niwns"]
 [ext_resource type="PackedScene" uid="uid://dr8frxmk7t2px" path="res://MODELS/wisskey/wisskey_proto.glb" id="3_u7sx0"]
@@ -9,17 +10,14 @@ vertices = PackedVector3Array(-126, 0.46951532, -2.25, -7, 0.46951532, -2.25, -7
 polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(3, 2, 0), PackedInt32Array(4, 3, 5), PackedInt32Array(5, 3, 6), PackedInt32Array(6, 3, 0), PackedInt32Array(10, 9, 7), PackedInt32Array(7, 9, 8), PackedInt32Array(11, 4, 12), PackedInt32Array(12, 4, 13), PackedInt32Array(13, 4, 5), PackedInt32Array(13, 5, 14), PackedInt32Array(7, 11, 10), PackedInt32Array(10, 11, 12), PackedInt32Array(16, 15, 17), PackedInt32Array(17, 15, 18), PackedInt32Array(19, 13, 20), PackedInt32Array(20, 13, 14), PackedInt32Array(20, 14, 21), PackedInt32Array(18, 19, 17), PackedInt32Array(17, 19, 20), PackedInt32Array(25, 24, 22), PackedInt32Array(22, 24, 23), PackedInt32Array(26, 20, 27), PackedInt32Array(27, 20, 28), PackedInt32Array(28, 20, 21), PackedInt32Array(28, 21, 29), PackedInt32Array(22, 26, 25), PackedInt32Array(25, 26, 27), PackedInt32Array(31, 30, 32), PackedInt32Array(32, 30, 33), PackedInt32Array(34, 28, 35), PackedInt32Array(35, 28, 29), PackedInt32Array(35, 29, 36), PackedInt32Array(33, 30, 37), PackedInt32Array(33, 37, 34), PackedInt32Array(34, 37, 28), PackedInt32Array(40, 39, 38), PackedInt32Array(40, 38, 41), PackedInt32Array(41, 35, 40), PackedInt32Array(40, 35, 36), PackedInt32Array(40, 36, 42), PackedInt32Array(0, 1, 43), PackedInt32Array(43, 1, 44), PackedInt32Array(46, 8, 45), PackedInt32Array(45, 8, 9), PackedInt32Array(52, 51, 47), PackedInt32Array(47, 51, 48), PackedInt32Array(48, 51, 50), PackedInt32Array(48, 50, 49), PackedInt32Array(45, 52, 46), PackedInt32Array(46, 52, 47), PackedInt32Array(16, 53, 15), PackedInt32Array(15, 53, 54), PackedInt32Array(56, 55, 51), PackedInt32Array(51, 55, 50), PackedInt32Array(50, 55, 57), PackedInt32Array(58, 54, 53), PackedInt32Array(54, 58, 56), PackedInt32Array(56, 58, 55), PackedInt32Array(60, 23, 59), PackedInt32Array(59, 23, 24), PackedInt32Array(62, 61, 63), PackedInt32Array(63, 61, 55), PackedInt32Array(55, 61, 64), PackedInt32Array(55, 64, 57), PackedInt32Array(59, 62, 60), PackedInt32Array(60, 62, 63), PackedInt32Array(31, 32, 65), PackedInt32Array(65, 32, 66), PackedInt32Array(68, 67, 61), PackedInt32Array(61, 67, 64), PackedInt32Array(64, 67, 69), PackedInt32Array(70, 65, 66), PackedInt32Array(66, 68, 70), PackedInt32Array(70, 68, 61), PackedInt32Array(71, 39, 40), PackedInt32Array(72, 71, 40), PackedInt32Array(72, 40, 67), PackedInt32Array(67, 40, 69), PackedInt32Array(69, 40, 73), PackedInt32Array(43, 44, 74), PackedInt32Array(43, 74, 75), PackedInt32Array(48, 49, 75), PackedInt32Array(75, 49, 76), PackedInt32Array(75, 76, 43)]
 agent_radius = 2.0
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_niwns"]
-viewport_path = NodePath("signs/hallway_Sign/SubViewport_hallway")
-
-[sub_resource type="LabelSettings" id="LabelSettings_niwns"]
-font_size = 64
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_u7sx0"]
-viewport_path = NodePath("signs/hallwayShort_Sign/SubViewport_hallwayShort")
-
 [sub_resource type="ViewportTexture" id="ViewportTexture_4tj5s"]
-viewport_path = NodePath("signs/wisskey_proto_Sign/SubViewport_wisskey_proto")
+viewport_path = NodePath("subviewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_5n8xq"]
+viewport_path = NodePath("subviewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_6jmjk"]
+viewport_path = NodePath("subviewport")
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_u7sx0"]
 height = 4.0
@@ -33,89 +31,20 @@ navigation_mesh = SubResource("NavigationMesh_0p100")
 
 [node name="signs" type="Node3D" parent="."]
 
-[node name="hallway_Sign" type="Sprite3D" parent="signs"]
-transform = Transform3D(2, 0, 0, 0, -8.742278e-08, 2, 0, -2, -8.742278e-08, 0, 0, 12)
-modulate = Color(0, 0, 0, 1)
-texture = SubResource("ViewportTexture_niwns")
-
-[node name="SubViewport_hallway" type="SubViewport" parent="signs/hallway_Sign"]
-transparent_bg = true
-
-[node name="MarginContainer" type="MarginContainer" parent="signs/hallway_Sign/SubViewport_hallway"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -118.5
-offset_top = -44.0
-offset_right = 118.5
-offset_bottom = 44.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="signs/hallway_Sign/SubViewport_hallway/MarginContainer"]
-layout_mode = 2
-text = "hallway"
-label_settings = SubResource("LabelSettings_niwns")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="hallwayShort_Sign" type="Sprite3D" parent="signs"]
-transform = Transform3D(2, 0, 0, 0, -8.742278e-08, 2, 0, -2, -8.742278e-08, 19, 0, 11)
-modulate = Color(0, 0, 0, 1)
-texture = SubResource("ViewportTexture_u7sx0")
-
-[node name="SubViewport_hallwayShort" type="SubViewport" parent="signs/hallwayShort_Sign"]
-transparent_bg = true
-
-[node name="MarginContainer" type="MarginContainer" parent="signs/hallwayShort_Sign/SubViewport_hallwayShort"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -118.5
-offset_top = -44.0
-offset_right = 118.5
-offset_bottom = 44.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="signs/hallwayShort_Sign/SubViewport_hallwayShort/MarginContainer"]
-layout_mode = 2
-text = "hallwayShort"
-label_settings = SubResource("LabelSettings_niwns")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="wisskey_proto_Sign" type="Sprite3D" parent="signs"]
-transform = Transform3D(2, 0, 0, 0, -8.742278e-08, 2, 0, -2, -8.742278e-08, 33, 0, 10)
-modulate = Color(0, 0, 0, 1)
+[node name="hallwaySign" parent="signs" node_paths=PackedStringArray("target") instance=ExtResource("1_4tj5s")]
+transform = Transform3D(2, 0, 0, 0, -8.742278e-08, 2, 0, -2, -8.742278e-08, 0, 0, 9)
 texture = SubResource("ViewportTexture_4tj5s")
+target = NodePath("../../geo/Hallway")
 
-[node name="SubViewport_wisskey_proto" type="SubViewport" parent="signs/wisskey_proto_Sign"]
-transparent_bg = true
+[node name="hallwayShortSign" parent="signs" node_paths=PackedStringArray("target") instance=ExtResource("1_4tj5s")]
+transform = Transform3D(2, 0, 0, 0, -8.742278e-08, 2, 0, -2, -8.742278e-08, 20, 0, 7)
+texture = SubResource("ViewportTexture_5n8xq")
+target = NodePath("../../geo/hallwayShort")
 
-[node name="MarginContainer" type="MarginContainer" parent="signs/wisskey_proto_Sign/SubViewport_wisskey_proto"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -118.5
-offset_top = -44.0
-offset_right = 118.5
-offset_bottom = 44.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="signs/wisskey_proto_Sign/SubViewport_wisskey_proto/MarginContainer"]
-layout_mode = 2
-text = "wisskey_proto"
-label_settings = SubResource("LabelSettings_niwns")
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="wisskeyProtoSign" parent="signs" node_paths=PackedStringArray("target") instance=ExtResource("1_4tj5s")]
+transform = Transform3D(2, 0, 0, 0, -8.742278e-08, 2, 0, -2, -8.742278e-08, 33, 0, 6)
+texture = SubResource("ViewportTexture_6jmjk")
+target = NodePath("../../geo/wisskey_proto")
 
 [node name="geo" type="Node3D" parent="."]
 

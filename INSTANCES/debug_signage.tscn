@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://cc8ewqro6e7rd"]
+
+[ext_resource type="Script" uid="uid://bftfwhpsbvm0c" path="res://SCRIPTS/debug_signage.gd" id="1_u7vbf"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_niwns"]
+viewport_path = NodePath("subviewport")
+
+[sub_resource type="LabelSettings" id="LabelSettings_niwns"]
+font_size = 64
+
+[node name="debugSignage" type="Sprite3D"]
+transform = Transform3D(2, 0, 0, 0, -8.742278e-08, 2, 0, -2, -8.742278e-08, 0, 0, 0)
+modulate = Color(0, 0, 0, 1)
+texture = SubResource("ViewportTexture_niwns")
+script = ExtResource("1_u7vbf")
+
+[node name="subviewport" type="SubViewport" parent="."]
+transparent_bg = true
+
+[node name="MarginContainer" type="MarginContainer" parent="subviewport"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -118.5
+offset_top = -44.0
+offset_right = 118.5
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="subviewport/MarginContainer"]
+layout_mode = 2
+text = "TEMP"
+label_settings = SubResource("LabelSettings_niwns")
+horizontal_alignment = 1
+vertical_alignment = 1
