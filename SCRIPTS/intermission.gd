@@ -3,7 +3,10 @@ extends Node3D
 var rotateSpeed : float = 32
 var muteToggle : bool = false;
 var textIndex : int = 0
-var texts = [["", "INTERMISSION", "TECHNICAL"], ["", "INTERMISSION", "DIFFICULTIES"]]
+var texts = [
+			["", "INTERMISSION", "TECHNICAL", "WAHLE IST"], 
+			["", "INTERMISSION", "DIFFICULTIES", "IST SCHULD"]
+			]
 
 func _ready() -> void:
 	$HUD/TOP_CONTAINER/TOP.text = ""
