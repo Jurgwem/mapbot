@@ -12,7 +12,7 @@ size = Vector3(1, 9, 8)
 size = Vector3(2.031189, 9, 2.015503)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kuxf4"]
-size = Vector3(0.1361084, 1998.6372, 1.7814837)
+size = Vector3(0.136, 9, 2.6774874)
 
 [node name="entranceHall" type="StaticBody3D"]
 
@@ -110,17 +110,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.99057, 4, -5.008522)
 shape = SubResource("BoxShape3D_rxj20")
 
 [node name="Collision13" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.99404883, 0, -0.108936295, 0, 1, 0, 0.108936295, 0, 0.99404883, -3.5135224, 3, 5.3320084)
+transform = Transform3D(0.99404883, 0, -0.108936295, 0, 1, 0, 0.108936295, 0, 0.99404883, -3.5957234, 3, 5.9238553)
 shape = SubResource("BoxShape3D_kuxf4")
 
 [node name="Collision14" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.99344087, 0, 0.11434765, 0, 1, 0, -0.11434765, 0, 0.99344087, 3.5398278, 3, 5.5487347)
+transform = Transform3D(0.99344087, 0, 0.11434765, 0, 1, 0, -0.11434765, 0, 0.99344087, 3.589149, 3, 5.844658)
 shape = SubResource("BoxShape3D_kuxf4")
 
 [node name="Collision15" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.99404883, 0, -0.108936295, 0, 1, 0, 0.108936295, 0, 0.99404883, -3.516994, 997.8186, 12.898588)
+transform = Transform3D(0.99404883, 0, -0.108936295, 0, 1, 0, 0.108936295, 0, 0.99404883, -3.5827546, 997.8186, 13.7699175)
 shape = SubResource("BoxShape3D_kuxf4")
 
 [node name="Collision16" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.99344087, 0, 0.11434765, 0, 1, 0, -0.11434765, 0, 0.99344087, 3.5352085, 3, 13.520302)
+transform = Transform3D(0.99344087, 0, 0.11434765, 0, 1, 0, -0.11434765, 0, 0.99344087, 3.5864642, 3, 13.965606)
 shape = SubResource("BoxShape3D_kuxf4")

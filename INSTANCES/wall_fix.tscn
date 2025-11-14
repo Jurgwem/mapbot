@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dx382u2w1ys6r"]
+
+[ext_resource type="PackedScene" uid="uid://fmsniy50kse7" path="res://MODELS/wallFix/wallFix.glb" id="1_4segm"]
+
+[node name="wallFix" type="Node3D"]
+
+[node name="wallFix" parent="." instance=ExtResource("1_4segm")]

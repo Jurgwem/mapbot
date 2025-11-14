@@ -1,8 +1,13 @@
 extends Node
 
 @onready var debugMap : Resource = preload("res://MAPS/map_test.tscn")
+@onready var GroundFloorMap : Resource = preload("res://MAPS/ground_floor.tscn")
+
+var currentInstancedMap : NavigationRegion3D
 
 func _ready() -> void:
+	currentInstancedMap = GroundFloorMap.instantiate()
+	get_tree().current_scene.add_child(currentInstancedMap)
 	print("autoload done.")
 
 func _input(event: InputEvent) -> void:
@@ -38,14 +43,16 @@ func _input(event: InputEvent) -> void:
 		else:
 			if event.is_action_pressed("loadDebug"):
 				clearMap()
-				var debugMapInstance : NavigationRegion3D = debugMap.instantiate()
-				get_tree().current_scene.add_child(debugMapInstance)
+				currentInstancedMap = debugMap.instantiate()
+				get_tree().current_scene.add_child(currentInstancedMap)
 			
 			if event.is_action_pressed("loadBasement"):
 				clearMap()
 				
 			if event.is_action_pressed("loadGroundFloor"):
 				clearMap()
+				currentInstancedMap = GroundFloorMap.instantiate()
+				get_tree().current_scene.add_child(currentInstancedMap)
 				
 			if event.is_action_pressed("loadFirstFloor"):
 				clearMap()
@@ -59,6 +66,20 @@ func _input(event: InputEvent) -> void:
 			get_tree().change_scene_to_file("res://SCENES/intermission.tscn")
 			
 		
+			
+			
+func toggleMappingUI(value) -> void:
+	if currentInstancedMap != null:
+		var borders = currentInstancedMap.get_node("borders")
+		var signs = currentInstancedMap.get_node("signs")
+		
+		if value:
+			signs.visible = false;
+			borders.visible = false;
+		else:
+			signs.visible = true;
+			borders.visible = true;
+
 func clearMap() -> void:
 	var root : Node = get_tree().current_scene
 	

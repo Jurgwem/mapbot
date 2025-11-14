@@ -71,6 +71,7 @@ func _input(event: InputEvent) -> void:
 			zoom = cameraResetHeight
 			isOrthogonalProjection = false
 			updateCameraProjection()
+			Autoload.toggleMappingUI(isFirstPerson)
 			
 		if event.is_action_pressed("toggleCamProjection"):
 			if !isFirstPerson:

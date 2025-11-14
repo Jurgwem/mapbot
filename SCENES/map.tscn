@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bo6sljjyhdbtt"]
+[gd_scene load_steps=6 format=3 uid="uid://bo6sljjyhdbtt"]
 
 [ext_resource type="Script" uid="uid://222gsl3rofox" path="res://SCRIPTS/wisskey.gd" id="1_0p100"]
 [ext_resource type="PackedScene" uid="uid://dr8frxmk7t2px" path="res://MODELS/wisskey/wisskey_proto.glb" id="1_hxggd"]
-[ext_resource type="PackedScene" uid="uid://cd6id4ad0hyrq" path="res://MAPS/map_test.tscn" id="1_peutm"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0p100"]
 font_size = 24
@@ -20,6 +19,7 @@ radius = 1.2
 [node name="world" type="Node3D"]
 
 [node name="HUD" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="MarginContainer" type="MarginContainer" parent="HUD"]
 anchors_preset = 2
@@ -80,5 +80,3 @@ shape = SubResource("CylinderShape3D_0p100")
 
 [node name="PathLine" type="MeshInstance3D" parent="wisskey"]
 skeleton = NodePath("../..")
-
-[node name="map_test" parent="." instance=ExtResource("1_peutm")]

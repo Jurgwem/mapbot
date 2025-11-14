@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://cxnu6xm4j5x3w"]
+
+[ext_resource type="Texture2D" uid="uid://ctyg7tprfy5py" path="res://MODELS/wallFix/wallFix_wallFix_diffuse.png" id="1_g88wv"]
+[ext_resource type="Texture2D" uid="uid://blayveldaxlpd" path="res://MODELS/wallFix/wallFix_wallFix_rough.png" id="2_k4vk7"]
+
+[resource]
+resource_name = "wallFix_combined"
+cull_mode = 2
+albedo_texture = ExtResource("1_g88wv")
+metallic_texture = ExtResource("2_k4vk7")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_k4vk7")
+roughness_texture_channel = 1
+texture_filter = 4
