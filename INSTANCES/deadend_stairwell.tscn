@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqf3jgbx1qnvo"]
+
+[ext_resource type="PackedScene" uid="uid://bnhy3x84odhip" path="res://MODELS/deadendStairwell/deadendStairwell.glb" id="1_0a7uj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0a7uj"]
+size = Vector3(1, 9, 8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vw1qw"]
+size = Vector3(10, 9, 1)
+
+[node name="deadendStairwell" type="StaticBody3D"]
+
+[node name="deadendStairwell" parent="." instance=ExtResource("1_0a7uj")]
+
+[node name="Collision1" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 4.5, 0)
+shape = SubResource("BoxShape3D_0a7uj")
+
+[node name="Collision2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 4.5, 0)
+shape = SubResource("BoxShape3D_0a7uj")
+
+[node name="Collision3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, -4.5)
+shape = SubResource("BoxShape3D_vw1qw")
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+interior = true

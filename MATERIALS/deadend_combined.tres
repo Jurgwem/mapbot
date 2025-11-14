@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://j81gi1jcs2a3"]
+
+[ext_resource type="Texture2D" uid="uid://mc1wgq6s3gr7" path="res://MODELS/deadend/deadend_deadend_diffuse.png" id="1_wpa4s"]
+[ext_resource type="Texture2D" uid="uid://byeoijtwqp513" path="res://MODELS/deadend/deadend_deadend_rough.png" id="2_c1ld5"]
+
+[resource]
+resource_name = "deadend_combined"
+cull_mode = 2
+albedo_texture = ExtResource("1_wpa4s")
+metallic_texture = ExtResource("2_c1ld5")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_c1ld5")
+roughness_texture_channel = 1

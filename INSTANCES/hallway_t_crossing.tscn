@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtpbk46xt0wmg"]
+
+[ext_resource type="PackedScene" uid="uid://bjwfqatxr72rx" path="res://MODELS/hallwayTCrossing/hallwayTCrossing.glb" id="1_hhoqk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hhoqk"]
+size = Vector3(1, 9, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nokhu"]
+size = Vector3(10, 9, 1)
+
+[node name="hallwayTCrossing" type="StaticBody3D"]
+
+[node name="hallwayTCrossing" parent="." instance=ExtResource("1_hhoqk")]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.08910227, 9.131204, 0)
+light_energy = 8.0
+spot_range = 11.643555
+spot_angle = 62.01841
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+interior = true
+
+[node name="Collision2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 4.5, -4.5)
+shape = SubResource("BoxShape3D_hhoqk")
+
+[node name="Collision3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 4.5, -4.5)
+shape = SubResource("BoxShape3D_hhoqk")
+
+[node name="Collision1" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, 4.5)
+shape = SubResource("BoxShape3D_nokhu")

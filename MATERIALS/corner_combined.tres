@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://cn7bey23y36vb"]
+
+[ext_resource type="Texture2D" uid="uid://ce38q3eeiuqsq" path="res://MODELS/corner/corner_corner_diffuse.png" id="1_a0a3e"]
+[ext_resource type="Texture2D" uid="uid://d2pxyo6qc74nc" path="res://MODELS/corner/corner_corner_rough.png" id="2_fwjsn"]
+
+[resource]
+resource_name = "corner_combined"
+cull_mode = 2
+albedo_texture = ExtResource("1_a0a3e")
+metallic_texture = ExtResource("2_fwjsn")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_fwjsn")
+roughness_texture_channel = 1

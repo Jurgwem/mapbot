@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://1clgxojgthdm"]
+
+[ext_resource type="PackedScene" uid="uid://c13uo38ep6jbj" path="res://MODELS/corner/corner.glb" id="1_hfw2m"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hfw2m"]
+size = Vector3(10, 9, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_66v4b"]
+size = Vector3(1, 9, 9)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4ea8r"]
+size = Vector3(1, 9, 1)
+
+[node name="corner" type="StaticBody3D"]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.08910227, 9.131204, 0)
+light_energy = 8.0
+spot_range = 11.643555
+spot_angle = 62.01841
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+interior = true
+
+[node name="Collision1" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, 4.5)
+shape = SubResource("BoxShape3D_hfw2m")
+
+[node name="Collision2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 4.5, -0.5)
+shape = SubResource("BoxShape3D_66v4b")
+
+[node name="Collision3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 4.5, -4.5)
+shape = SubResource("BoxShape3D_4ea8r")
+
+[node name="corner" parent="." instance=ExtResource("1_hfw2m")]

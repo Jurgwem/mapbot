@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://c71q1w4tpcwf4"]
+
+[ext_resource type="Texture2D" uid="uid://c38fs6txwdgag" path="res://MODELS/stair/deadendStairwell_stair_diffuse.png" id="1_untgc"]
+[ext_resource type="Texture2D" uid="uid://cjonbcm2yxngq" path="res://MODELS/stair/deadendStairwell_stair_rough.png" id="2_214tx"]
+
+[resource]
+resource_name = "stair_combined"
+cull_mode = 2
+albedo_texture = ExtResource("1_untgc")
+metallic_texture = ExtResource("2_214tx")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_214tx")
+roughness_texture_channel = 1

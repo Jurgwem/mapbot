@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://di8eu3dq6cgtf"]
+
+[ext_resource type="Texture2D" uid="uid://b0trcy2m1teus" path="res://MODELS/deadendStairwell/deadendStairwell_deadendStairwell_diffuse.png" id="1_jqj2e"]
+[ext_resource type="Texture2D" uid="uid://61l8de8rjbix" path="res://MODELS/deadendStairwell/deadendStairwell_deadendStairwell_rough.png" id="2_g5lgg"]
+
+[resource]
+resource_name = "deadendStairwell_combined"
+cull_mode = 2
+albedo_texture = ExtResource("1_jqj2e")
+metallic_texture = ExtResource("2_g5lgg")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_g5lgg")
+roughness_texture_channel = 1

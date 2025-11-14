@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://c1org0qlq8cr7"]
+
+[ext_resource type="Texture2D" uid="uid://c8bne6i5bqbyn" path="res://MODELS/border/deadendStairwell_border_diffuse.png" id="1_uek8k"]
+[ext_resource type="Texture2D" uid="uid://dhf8q0nqpl0qs" path="res://MODELS/border/deadendStairwell_border_rough.png" id="2_syp8w"]
+
+[resource]
+resource_name = "border_combined"
+cull_mode = 2
+albedo_texture = ExtResource("1_uek8k")
+metallic_texture = ExtResource("2_syp8w")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_syp8w")
+roughness_texture_channel = 1

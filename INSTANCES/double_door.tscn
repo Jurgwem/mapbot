@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dva8kohkayggl"]
+
+[ext_resource type="PackedScene" uid="uid://de3quhf1y2gs1" path="res://MODELS/doubleDoor/doubleDoor.glb" id="1_rqoy6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rqoy6"]
+size = Vector3(0.38330078, 9, 3.5788574)
+
+[node name="doubleDoor" type="StaticBody3D"]
+
+[node name="doubleDoor" parent="." instance=ExtResource("1_rqoy6")]
+
+[node name="Collision1" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.99404883, 0, -0.108936295, 0, 1, 0, 0.108936295, 0, 0.99404883, -3.566, 3, 1.603)
+shape = SubResource("BoxShape3D_rqoy6")
+
+[node name="Collision2" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.99344087, 0, 0.11434765, 0, 1, 0, -0.11434765, 0, 0.99344087, 3.57, 3, 1.603)
+shape = SubResource("BoxShape3D_rqoy6")

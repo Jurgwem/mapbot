@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://5hjldqtu1k8e"]
+
+[ext_resource type="PackedScene" uid="uid://bgw84atmpn2mm" path="res://MODELS/border/deadendStairwell.glb" id="1_kitaa"]
+
+[node name="border" type="Node3D"]
+
+[node name="deadendStairwell" parent="." instance=ExtResource("1_kitaa")]

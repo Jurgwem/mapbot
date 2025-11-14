@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://cicpeeudvoxk3"]
+
+[ext_resource type="Texture2D" uid="uid://dkl7kdmwok7v8" path="res://MODELS/hallwayCrossing/hallwayCrossing_hallwayCrossing_diffuse.png" id="1_leqm7"]
+[ext_resource type="Texture2D" uid="uid://bmafc3q87r7cb" path="res://MODELS/hallwayCrossing/hallwayCrossing_hallwayCrossing_diffuse_1.png" id="2_7ljfe"]
+
+[resource]
+resource_name = "hallwayCrossing_combined"
+cull_mode = 2
+albedo_texture = ExtResource("1_leqm7")
+metallic_texture = ExtResource("2_7ljfe")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_7ljfe")
+roughness_texture_channel = 1

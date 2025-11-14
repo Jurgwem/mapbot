@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtyabegkyiuuo"]
+
+[ext_resource type="PackedScene" uid="uid://fni8aemqmxw5" path="res://MODELS/deadend/deadend.glb" id="1_508mo"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_508mo"]
+size = Vector3(1, 9, 8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ldapq"]
+size = Vector3(10, 9, 1)
+
+[node name="deadend" type="StaticBody3D"]
+
+[node name="deadend" parent="." instance=ExtResource("1_508mo")]
+
+[node name="Collision1" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 4.5, 0)
+shape = SubResource("BoxShape3D_508mo")
+
+[node name="Collision2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 4.5, 0)
+shape = SubResource("BoxShape3D_508mo")
+
+[node name="Collision3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, -4.5)
+shape = SubResource("BoxShape3D_ldapq")
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+interior = true
