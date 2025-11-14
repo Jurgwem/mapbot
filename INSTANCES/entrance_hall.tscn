@@ -21,7 +21,6 @@ size = Vector3(0.136, 9, 2.6774874)
 [node name="ReflectionProbe" type="ReflectionProbe" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08508301, 5, 2)
 size = Vector3(32, 20, 32)
-interior = true
 
 [node name="lights" type="Node3D" parent="."]
 

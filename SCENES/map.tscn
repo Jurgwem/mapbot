@@ -10,6 +10,8 @@ outline_size = 8
 outline_color = Color(0, 0, 0, 0.5019608)
 
 [sub_resource type="Environment" id="Environment_peutm"]
+background_color = Color(1, 1, 1, 1)
+reflected_light_source = 1
 glow_enabled = true
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_0p100"]
