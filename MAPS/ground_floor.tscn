@@ -633,6 +633,11 @@ transform = Transform3D(1.61, 0, 0, 0, -7.0375336e-08, 1.61, 0, -1.61, -7.037533
 texture = SubResource("ViewportTexture_mbaxk")
 roomTitle = "N113"
 
+[node name="roomSignage26" parent="signs" instance=ExtResource("13_5snv0")]
+transform = Transform3D(1.61, 0, 0, 0, -7.0375336e-08, 1.61, 0, -1.61, -7.0375336e-08, -3.4667358, 9, -14.089333)
+texture = SubResource("ViewportTexture_mbaxk")
+roomTitle = "N111"
+
 [node name="roomSignage13" parent="signs" instance=ExtResource("13_5snv0")]
 transform = Transform3D(0.985, 0, 0, 0, -4.3055717e-08, 0.985, 0, -0.985, -4.3055717e-08, -7.666733, 9, -7.389333)
 texture = SubResource("ViewportTexture_27gg5")
@@ -649,7 +654,7 @@ texture = SubResource("ViewportTexture_fwk7g")
 roomTitle = "Sani"
 
 [node name="roomSignage4" parent="signs" instance=ExtResource("13_5snv0")]
-transform = Transform3D(1.37, 0, 0, 0, -5.98846e-08, 1.37, 0, -1.37, -5.98846e-08, 48.96266, 9, 10.9106655)
+transform = Transform3D(2, 0, 0, 0, -8.742278e-08, 2, 0, -2, -8.742278e-08, 48.96266, 9, 10.9106655)
 texture = SubResource("ViewportTexture_g6y3f")
 roomTitle = "N103a"
 

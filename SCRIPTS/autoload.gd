@@ -73,12 +73,13 @@ func toggleMappingUI(value) -> void:
 		var borders = currentInstancedMap.get_node("borders")
 		var signs = currentInstancedMap.get_node("signs")
 		
-		if value:
-			signs.visible = false;
-			borders.visible = false;
-		else:
-			signs.visible = true;
-			borders.visible = true;
+		if borders != null and signs != null:
+			if value:
+				signs.visible = false;
+				borders.visible = false;
+			else:
+				signs.visible = true;
+				borders.visible = true;
 
 func clearMap() -> void:
 	var root : Node = get_tree().current_scene
