@@ -11,4 +11,3 @@ metallic_texture = ExtResource("2_syp8w")
 metallic_texture_channel = 2
 roughness_texture = ExtResource("2_syp8w")
 roughness_texture_channel = 1
-texture_filter = 4

@@ -23,8 +23,9 @@ Autoload="*res://SCRIPTS/autoload.gd"
 
 [display]
 
-window/size/viewport_width=1536
-window/size/viewport_height=864
+window/size/viewport_width=864
+window/size/viewport_height=1536
+window/stretch/mode="viewport"
 
 [file_customization]
 
