@@ -23,19 +23,19 @@ Wortspiel aus "Robot" und "Map", gleichzeitige Anspielung auf Mapbot.
 |Zahl|Karte|
 |-|-|
 |0|Keller (To-do)|
-|1|Erdgeschoss (To-do)|
+|1|Erdgeschoss|
 |2|1. Obergeschoss (To-do)|
 |3|2. Obergeschoss (To-do)|
 |8|Debug- / Testkarte|
 |9|Intermission|
 
 ## Todo:
-- Mehr Map "Bausteine" erstellen
-- Das Gebäude Rekonstruieren
+- Das Gebäude weiter Rekonstruieren
 - Lighting / PP
 
 ## Credits
-[@Jurgwem](https://jurgwem.dev/)
+[@Jurgwem](https://jurgwem.dev/)<br />
+[@LeoRut](https://github.com/LeoRut)
 <br />
 ### Tools / Apps
 [Blender](https://www.blender.org/)<br />
