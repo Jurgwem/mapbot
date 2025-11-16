@@ -35,4 +35,5 @@ shape = SubResource("BoxShape3D_4ea8r")
 
 [node name="ReflectionProbe" type="ReflectionProbe" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+visible = false
 box_projection = true
