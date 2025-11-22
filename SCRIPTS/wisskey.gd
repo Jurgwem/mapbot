@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 @export var camera : Camera3D
 
-@export var zoomFactor : int = 1
+@export var zoomFactor : int = 2
 @export var maxSpeed : float = 16
 @export var accel : float = 50
 @export var sprint : float = 200
@@ -31,9 +31,7 @@ var current_path_target : Variant = null
 var path_update_timer : float = 0.0
 
 func _ready() -> void:
-	zoom = cameraResetHeight
 	currentAcceleration = accel
-	
 	path_line_node.top_level = true
 	
 	if path_line_node.mesh == null:
@@ -45,6 +43,16 @@ func _ready() -> void:
 	line_material.shading_mode = StandardMaterial3D.SHADING_MODE_UNSHADED
 	line_material.vertex_color_use_as_albedo = true
 	line_material.cull_mode = StandardMaterial3D.CULL_DISABLED
+	
+	# INTRO ZOOM IN
+	isFirstPerson = true
+	hasLerpedCameraTransition = false;
+	
+	#zoom = cameraResetHeight
+	rotation.y = deg_to_rad(90)
+	isOrthogonalProjection = false
+	updateCameraProjection()
+	Autoload.toggleMappingUI(isFirstPerson)
 	
 func _input(event: InputEvent) -> void:
 		if event.is_action_pressed("reset"):

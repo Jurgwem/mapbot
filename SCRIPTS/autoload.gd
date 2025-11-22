@@ -76,10 +76,10 @@ func toggleMappingUI(value) -> void:
 		if borders != null and signs != null:
 			if value:
 				signs.visible = false;
-				borders.visible = false;
+				borders.position.y = -9;
 			else:
 				signs.visible = true;
-				borders.visible = true;
+				borders.position.y = 0;
 
 func clearMap() -> void:
 	var root : Node = get_tree().current_scene
